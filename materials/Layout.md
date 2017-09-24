@@ -20,7 +20,13 @@
     </body>
 </html>
 ````   
+### Inde.cshtml
 
+````   
+@{
+    ViewBag.Title = "Students"; // used in the title tag
+}
+````   
 
 ### _ViewStart.cshtml      
     
