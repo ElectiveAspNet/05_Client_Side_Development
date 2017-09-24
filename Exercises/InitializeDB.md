@@ -95,10 +95,8 @@ The code checks if there are any students in the database, and if not, it assume
 In Startup.cs, modify the Configure method to call this seed method on application startup. First, add the context to the method signature so that ASP.NET dependency injection can provide it to your DbInitializer class.
 
 <pre>
-public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, <b>SchoolContext context</b>)
+public void Configure(IApplicationBuilder app, <b>SchoolContext context</b>)
 {
-    loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-    loggerFactory.AddDebug();
 </pre> 
 
 Then call your ````DbInitializer.Initialize```` method at the end of the Configure method.
