@@ -102,7 +102,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, <b>Schoo
 
 Then call your ````DbInitializer.Initialize```` method at the end of the Configure method.
 
-```` C#
+<pre>
     app.UseMvc(routes =>
     {
         routes.MapRoute(
@@ -113,7 +113,7 @@ Then call your ````DbInitializer.Initialize```` method at the end of the Configu
     <b>DbInitializer.Initialize(context);</b>
 }
 
-```` 
+</pre>
 Now the first time you run the application the database will be created and seeded with test data. Whenever you change your data model, you can delete the database, update your seed method, and start afresh with a new database the same way. In later tutorials you'll see how to modify the database when the data model changes, without deleting and re-creating it.
 
 
