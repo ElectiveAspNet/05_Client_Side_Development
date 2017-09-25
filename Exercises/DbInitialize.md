@@ -92,6 +92,15 @@ namespace ContosoUniversity.Data
 
 The code checks if there are any students in the database, and if not, it assumes the database is new and needs to be seeded with test data. It loads test data into arrays rather than List<T> collections to optimize performance.
 
+### Startup.cs
+In your ConfigureServises method add the DbContext so it can be used
+
+<pre>   
+public void ConfigureServices(IServiceCollection servises)
+        { 
+            <b>servises.AddDbContext<MyDbContext>();</b>
+</pre>  
+
 In Startup.cs, modify the Configure method to call this seed method on application startup. First, add the context to the method signature so that ASP.NET dependency injection can provide it to your DbInitializer class.
 
 <pre>
